@@ -41,7 +41,7 @@ Shader "Unity Shader/Charpter 6/Chapter_6_SpecularVertexLevel" {
 			
 			fixed3 reflectDir = normalize(reflect(-worldLightDir,worldNormal));
 			fixed3 viewDir = normalize(_WorldSpaceCameraPos.xyz-mul(unity_ObjectToWorld,v.vertex).xyz);
-			fixed3 specular = _LightColor0.rgb*_Specular* pow(max(0,dot(reflectDir,viewDir)),_Gloss);
+			fixed3 specular = _LightColor0.rgb*_Specular.rgb* pow(max(0,dot(reflectDir,viewDir)),_Gloss);
 
 
 			o.color = ambient+diffuse+specular;

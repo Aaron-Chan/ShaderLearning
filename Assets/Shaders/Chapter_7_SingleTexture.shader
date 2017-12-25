@@ -22,6 +22,7 @@
 			#pragma fragment frag
 			fixed4 _Color;
 			sampler2D _MainTex;
+			//纹理坐标的缩放 和位移值
 			fixed4 _MainTex_ST;
 		fixed4 _Specular;
 		float _Gloss;

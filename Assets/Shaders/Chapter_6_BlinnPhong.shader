@@ -47,7 +47,7 @@
 			fixed3 halfDir= normalize(worldLightDir+viewDir);
 			//计算漫反射强度
 		fixed3 diffuse = _LightColor0.rgb * _Diffuse.rgb * saturate(dot(i.worldNormal,worldLightDir));
-			fixed3 specular = _LightColor0.rgb*_Specular* pow(max(0,dot(i.worldNormal,halfDir)),_Gloss);
+			fixed3 specular = _LightColor0.rgb*_Specular.rgb* pow(max(0,dot(i.worldNormal,halfDir)),_Gloss);
 			
 		return fixed4( specular+ambient+diffuse,1.0);
 		

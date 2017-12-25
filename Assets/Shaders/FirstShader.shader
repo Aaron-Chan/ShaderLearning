@@ -12,7 +12,7 @@ Shader "Unity Shader/Charpter 5/Simple Shader" {
 	SubShader {
 		pass{
 		CGPROGRAM
-
+		#include "UnityCG.cginc"
 		#pragma vertex vert
 
 		#pragma fragment frag
