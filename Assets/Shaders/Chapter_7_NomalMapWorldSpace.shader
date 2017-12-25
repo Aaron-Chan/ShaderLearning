@@ -98,4 +98,5 @@ Shader "Unity Shader/Charpter 7/NomalMapWorldSpace"
 			ENDCG
 		}
 	}
+	FallBack "Specular"
 }
