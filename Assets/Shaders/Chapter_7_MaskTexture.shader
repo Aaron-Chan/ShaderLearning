@@ -58,7 +58,7 @@
 			{
 				v2f o;
 				o.pos = UnityObjectToClipPos(v.vertex);
-				o.uv = TRANSFORM_TEX(v.vertex, _MainTex);
+				o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
 				TANGENT_SPACE_ROTATION;
 				o.lightDir = mul(rotation, ObjSpaceLightDir(v.vertex)).xyz;
 				o.viewDir = mul(rotation, ObjSpaceViewDir(v.vertex)).xyz;
