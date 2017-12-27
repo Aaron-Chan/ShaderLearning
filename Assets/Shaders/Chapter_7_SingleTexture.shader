@@ -61,6 +61,7 @@
 				fixed3 worldLightDir = normalize(UnityWorldSpaceLightDir(i.worldPos));
 				fixed3 albedo = tex2D(_MainTex,i.uv).rgb*_Color.rgb;
 				fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * albedo;
+				
 				//计算漫反射强度
 		fixed3 diffuse = _LightColor0.rgb * albedo * max(0,dot(worldNormal,worldLightDir));
 		

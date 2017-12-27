@@ -85,6 +85,7 @@ Shader "Unity Shader/Charpter 7/NomalMapWorldSpace"
 				bump.xy *=_BumpScale;
 				bump.z = sqrt(1.0- saturate(dot(bump.xy,bump.xy)));
 
+				//相当于mul（切线到世界空间的转换矩阵，法线）
 				bump = normalize(half3(dot(i.TtoW0.xyz, bump ),dot(i.TtoW1.xyz, bump ),dot(i.TtoW2.xyz, bump )));
 
 				fixed3 albedo=tex2D(_MainTex,i.uv.xy)*_Color.rgb;

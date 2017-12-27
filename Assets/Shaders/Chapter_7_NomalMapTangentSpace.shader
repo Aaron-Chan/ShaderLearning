@@ -56,8 +56,10 @@
 				o.uv.zw=v.texcoord.xy*_BumpTex_ST.xy+_BumpTex_ST.zw;
 				//副切线
 				float3 binormal=cross(normalize(v.normal),normalize(v.tangent.xyz))*v.tangent.w;
-				//模型空间到切线空间的转置矩阵
+				//模型空间到切线空间的矩阵
 				float3x3 rotation=float3x3(v.tangent.xyz,binormal,v.normal);
+				//[--|----|-------]
+				//[-切线-|-副切线|---法线 ]
 				o.lightDir=mul(rotation,ObjSpaceLightDir(v.vertex)).xyz;
 				o.viewDir=mul(rotation,ObjSpaceViewDir(v.vertex)).xyz;
 				return o;
